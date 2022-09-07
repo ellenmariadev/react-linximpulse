@@ -1,8 +1,9 @@
 import React from "react";
-import { Produtos } from "./Produtos";
+import { Produto } from "./Produto";
+import { ProdutoGrid } from "./ProdutoGrid";
 
 const Fetch = () => {
-  const [data, setData] = React.useState();
+  const [data, setData] = React.useState([]);
   const [page, setPage] = React.useState(1);
 
   React.useEffect(() => {
@@ -10,7 +11,7 @@ const Fetch = () => {
       `https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=${page}`
     )
       .then((res) => res.json())
-      .then((item) => setData(item));
+      .then((json) => setData([...data, ...json.products]));
   }, [page]);
 
   const loadMore = () => {
@@ -19,9 +20,15 @@ const Fetch = () => {
 
   if (!data) return null;
 
+  const produto = data.map((product, index) => {
+    return (
+      <Produto key={index} product={product} />
+    );
+  });
+
   return (
     <div>
-      <Produtos products={data.products} />;
+      <ProdutoGrid>{produto}</ProdutoGrid>
       <section className="sessao-produtos">
         <button onClick={loadMore} data-type="btnprodutos" className="button">
           Ainda mais produtos aqui!

@@ -1,6 +1,7 @@
 import React from "react";
 
 export const Produto = ({ product }) => (
+  <>
     <div className="produto">
       <img src={product.image} alt={product.name} />
       <h3>{product.name}</h3>
@@ -16,4 +17,5 @@ export const Produto = ({ product }) => (
       </h4>
       <button className="button">Comprar</button>
     </div>
+  </>
 );
