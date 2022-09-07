@@ -1,4 +1,5 @@
 import React from "react";
+import FormMain from "./Forms/FormMain";
 
 function MainContent() {
   return (
@@ -27,31 +28,7 @@ function MainContent() {
               </p>
             </div>
           </div>
-          <form>
-            <div>
-              <label htmlFor="nome">Seu nome:</label>
-              <input id="nome" type="text" required />
-              <label htmlFor="email">E-mail:</label>
-              <input
-                id="email"
-                type="email"
-                placeholder="contato@email.com"
-                required
-              />
-              <p className="mensagem-check"></p>
-              <label htmlFor="cpf">CPF:</label>
-              <input type="text" required />
-              <div className="radio">
-                <input type="radio" name="genero" id="masculino" defaultChecked={true} />
-                <label htmlFor="masculino" className="label-masc">
-                  Masculino
-                </label>
-                <input type="radio" name="genero" id="feminino" />
-                <label htmlFor="feminino">Feminino</label>
-              </div>
-            </div>
-            <button className="button">Enviar</button>
-          </form>
+          <FormMain />
         </div>
       </main>
     </>

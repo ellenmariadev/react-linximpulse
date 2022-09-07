@@ -21,9 +21,7 @@ const Fetch = () => {
   if (!data) return null;
 
   const produto = data.map((product, index) => {
-    return (
-      <Produto key={index} product={product} />
-    );
+    return <Produto key={index} product={product} />;
   });
 
   return (

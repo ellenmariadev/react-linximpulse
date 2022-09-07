@@ -111,21 +111,24 @@ input[type="email"] {
   font-size: var(--fs-400);
 }
 
+span {
+  color: var(--invalid);
+  font-size: x-small;
+  padding-bottom: 0.5rem;
+  display: none;
+}
+
 input:focus-visible {
   outline: solid 1.5px;
   outline-color: var(--color);
 }
 
-.form-control-invalid {
+input:invalid[focused="true"] {
   --color: var(--invalid);
 }
-.form-control-valid {
-  --color: var(--valid);
-}
 
-.mensagem-check {
-  color: var(--invalid);
-  font-size: x-small;
+input:invalid[focused="true"] ~ span {
+  display: block;
 }
 
 label {
@@ -189,7 +192,7 @@ form {
   gap: 0.3rem;
 }
 
-.label-masc {
+input[type="radio"] {
   margin-right: 1rem;
 }
 
@@ -260,7 +263,7 @@ img {
 /* SESSÃO COMPARTILHE */
 
 .form-compartilhe {
-  max-width: 800px;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
