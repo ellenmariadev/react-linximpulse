@@ -7,8 +7,9 @@ let inputs = [
     id: 1,
     name: "nome",
     type: "text",
-    errorMsg: "Por favor, insira seu nome.",
-    label: "Seu nome:",
+    errorMsg: "Por favor, insira o seu nome.",
+    label: "Nome Completo:",
+    pattern: "^[a-zA-Z]{2,40}( [a-zA-Z]{2,40})+$",
     required: true,
   },
   {
@@ -25,8 +26,9 @@ let inputs = [
     name: "cpf",
     type: "text",
     label: "CPF:",
-    errorMsg: "Por favor, insira um CPF válido.",
+    errorMsg: "Por favor, insira o CPF no formato válido.",
     placeholder: "000.000.000-00",
+    pattern: "^([0-9]){3}\.([0-9]){3}\.([0-9]){3}-([0-9]){2}$",
     required: true,
   },
 ];
@@ -73,7 +75,7 @@ export default function FormMain() {
           onChange={onChange}
         />
       ))}
-      <div className="radio">
+      <div style={{ paddingTop: "0.5rem" }} className="radio">
         {radios.map((radio) => (
           <Radio key={radio.id} {...radio} value={values[radio.name]} />
         ))}
@@ -97,19 +99,34 @@ export function FormCompartilhe() {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
-  inputs = [inputs[0], inputs[1]]
+  let newInput = inputs.map((item) => {
+    if (item.id === 1) {
+      return {
+        ...item,
+        label: "Nome do seu amigo:",
+        errorMsg: "Por favor, insira o nome do seu amigo.",
+      };
+    }
+    return item;
+  });
+
+  newInput = [newInput[0], newInput[1]];
 
   return (
-    <form className="form-compartilhe" onSubmit={handleSubmit}>
-      {inputs.map((input) => (
-        <Input
-          key={input.id}
-          {...input}
-          value={values[input.name]}
-          onChange={onChange}
-        />
-      ))}
-      <button className="button">Enviar agora</button>
+    <form onSubmit={handleSubmit}>
+      <div className="form-compartilhe">
+        {newInput.map((input) => (
+          <Input
+            key={input.id}
+            {...input}
+            value={values[input.name]}
+            onChange={onChange}
+          />
+        ))}
+      </div>
+      <button style={{ placeSelf: "center" }} className="button">
+        Enviar agora
+      </button>
     </form>
   );
 }

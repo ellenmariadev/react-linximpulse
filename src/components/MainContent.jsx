@@ -4,8 +4,8 @@ import FormMain from "./Forms/FormMain";
 function MainContent() {
   return (
     <>
-      <main className="container">
-        <div className="sessao-algoritmo">
+      <main>
+        <div style={{paddingTop:"8rem"}} className="container sessao-algoritmo">
           <div>
             <h2 className="subtitulo fw-400">
               Ajude o algorítimo a ser mais certeiro
@@ -20,7 +20,7 @@ function MainContent() {
                 corrupti animi earum eaque magnam mollitia quae praesentium?
                 Modi, iste praesentium.
               </p>
-              <p className="paragrafo">
+              <p style={{ marginTop: "1rem" }} className="paragrafo">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
                 corporis ipsa provident repellendus hic! Commodi laborum aliquid
                 suscipit a. Voluptas voluptates recusandae sequi corrupti

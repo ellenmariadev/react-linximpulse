@@ -106,12 +106,13 @@ input[type="email"] {
   border: 1.5px solid var(--color, rgb(214, 214, 214));
   background-color: rgba(214, 214, 214, 0.571);
   border-radius: 5px;
+  margin-top: 0.2rem;
   margin-bottom: 0.5rem;
   color: var(--cor-02);
   font-size: var(--fs-400);
 }
 
-span {
+small {
   color: var(--invalid);
   font-size: x-small;
   padding-bottom: 0.5rem;
@@ -127,7 +128,7 @@ input:invalid[focused="true"] {
   --color: var(--invalid);
 }
 
-input:invalid[focused="true"] ~ span {
+input:invalid[focused="true"] ~ small {
   display: block;
 }
 
@@ -174,6 +175,12 @@ header .button {
 }
 
 /* SESSÃO ALGORITMO */
+
+main {
+  background: rgb(255,255,255);
+  background: linear-gradient(3deg, rgba(255,255,255,0) 85.8%, rgba(78,74,102,1) 86%);
+  padding-bottom: 4rem;
+}
 
 .sessao-algoritmo {
   display: grid;
@@ -273,7 +280,8 @@ img {
 .sessao-compartilhe {
   display: grid;
   place-items: center;
-  margin-bottom: 5rem;
+  background: rgb(78,74,102);
+background: linear-gradient(-3.5deg, rgba(78,74,102,1) 17.8%, rgba(255,255,255,1) 18%);
 }
 
 .sessao-compartilhe p {
@@ -288,4 +296,5 @@ footer {
   color: var(--cor-0);
   padding: 2rem 0;
   font-size: var(--fs-400);
+  padding-bottom: 4rem;
 }

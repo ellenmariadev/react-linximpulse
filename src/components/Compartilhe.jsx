@@ -5,7 +5,7 @@ function Compartilhe() {
   return (
     <>
       <section className="sessao-compartilhe">
-        <div className="container">
+        <div style={{marginBottom:"10rem"}} className="container">
             <h2 className="subtitulo text-center fw-700" data-type="detalhe">
               Compartilhe a novidade
             </h2>
