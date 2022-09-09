@@ -28,7 +28,7 @@ const Fetch = () => {
     <div>
       <ProdutoGrid>{produto}</ProdutoGrid>
       <section className="sessao-produtos">
-        <button onClick={loadMore} data-type="btnprodutos" className="button">
+        <button style={{marginTop: "5rem"}} onClick={loadMore} data-type="btnprodutos" className="button">
           Ainda mais produtos aqui!
         </button>
       </section>
