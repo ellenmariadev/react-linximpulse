@@ -3,6 +3,8 @@
 > **Note**: o desafio consiste no desenvolvimento do layout de uma landing page com uma grade
 de produtos e um formulário de newsletter. 
 
+### Deploy
+https://linximpulsereact.netlify.app/
 
 ### 🎲 Iniciando o Projeto
 
